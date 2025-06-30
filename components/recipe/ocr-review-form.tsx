@@ -227,7 +227,7 @@ export function OCRReviewForm({
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-            <div className="space-y-2">
+            <div>
               <Label htmlFor="prepTime">Prep Time (minutes)</Label>
               <Input
                 id="prepTime"
@@ -235,10 +235,11 @@ export function OCRReviewForm({
                 min="0"
                 value={recipe.prepTime || ""}
                 onChange={(e) => updateField("prepTime", e.target.value ? parseInt(e.target.value) : undefined)}
+                className="mt-1"
               />
             </div>
 
-            <div className="space-y-2">
+            <div>
               <Label htmlFor="cookTime">Cook Time (minutes)</Label>
               <Input
                 id="cookTime"
@@ -246,10 +247,11 @@ export function OCRReviewForm({
                 min="0"
                 value={recipe.cookTime || ""}
                 onChange={(e) => updateField("cookTime", e.target.value ? parseInt(e.target.value) : undefined)}
+                className="mt-1"
               />
             </div>
 
-            <div className="space-y-2">
+            <div>
               <Label htmlFor="servings">Servings</Label>
               <Input
                 id="servings"
@@ -257,6 +259,7 @@ export function OCRReviewForm({
                 min="1"
                 value={recipe.servings || ""}
                 onChange={(e) => updateField("servings", e.target.value ? parseInt(e.target.value) : undefined)}
+                className="mt-1"
               />
             </div>
           </div>

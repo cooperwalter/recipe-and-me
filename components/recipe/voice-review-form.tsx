@@ -160,32 +160,38 @@ export function VoiceReviewForm({
             />
           </div>
 
-          <div className="grid grid-cols-3 gap-4">
-            <div className="space-y-2">
-              <Label htmlFor="prepTime">Prep Time (min)</Label>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <div>
+              <Label htmlFor="prepTime">Prep Time (minutes)</Label>
               <Input
                 id="prepTime"
                 type="number"
+                min="0"
                 value={formData.prepTime || ''}
                 onChange={(e) => updateField('prepTime', e.target.value ? Number(e.target.value) : undefined)}
+                className="mt-1"
               />
             </div>
-            <div className="space-y-2">
-              <Label htmlFor="cookTime">Cook Time (min)</Label>
+            <div>
+              <Label htmlFor="cookTime">Cook Time (minutes)</Label>
               <Input
                 id="cookTime"
                 type="number"
+                min="0"
                 value={formData.cookTime || ''}
                 onChange={(e) => updateField('cookTime', e.target.value ? Number(e.target.value) : undefined)}
+                className="mt-1"
               />
             </div>
-            <div className="space-y-2">
+            <div>
               <Label htmlFor="servings">Servings</Label>
               <Input
                 id="servings"
                 type="number"
+                min="1"
                 value={formData.servings || ''}
                 onChange={(e) => updateField('servings', e.target.value ? Number(e.target.value) : undefined)}
+                className="mt-1"
               />
             </div>
           </div>

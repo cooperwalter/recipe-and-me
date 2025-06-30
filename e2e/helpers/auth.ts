@@ -1,5 +1,20 @@
 import { Page } from '@playwright/test'
 
+// Helper function to login with demo credentials
+export async function loginWithDemoCredentials(page: Page) {
+  await page.goto('/auth/login')
+  
+  // Fill in demo credentials
+  await page.fill('input[id="email"]', 'demo@recipeandme.app')
+  await page.fill('input[id="password"]', 'DemoRecipes2024!')
+  
+  // Submit the form
+  await page.getByRole('button', { name: 'Login' }).click()
+  
+  // Wait for navigation to recipes page
+  await page.waitForURL('**/protected/recipes', { timeout: 10000 })
+}
+
 export async function mockAuthentication(page: Page) {
   // Mock Supabase auth session
   await page.addInitScript(() => {

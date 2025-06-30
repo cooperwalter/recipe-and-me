@@ -122,3 +122,4 @@ Required in production:
 - Do not commit and push any changes while there are failing unit tests
 - When fixing tests, do not stop until all test failures are resolved
 - Every time you make a change, check that unit tests succeed (pnpm run test)
+- Every time you make a change, ensure that you lint and that linting succeeds

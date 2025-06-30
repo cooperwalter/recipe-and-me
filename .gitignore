@@ -44,3 +44,24 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Playwright
+/test-results/
+/playwright-report/
+/playwright/.cache/
+/playwright/.auth/
+/test-results-*/
+/playwright-report-*/
+playwright-videos-*/
+*.png
+*.jpg
+*.jpeg
+*.webm
+*.mp4
+# Keep screenshots that might be part of docs
+!docs/**/*.png
+!docs/**/*.jpg
+!docs/**/*.jpeg
+
+# Sentry Config File
+.env.sentry-build-plugin
